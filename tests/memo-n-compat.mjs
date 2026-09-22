@@ -88,4 +88,4 @@ await new Promise(resolve => setTimeout(resolve, 20));
 assert.equal(sandbox.__choiceTest.memoReady.has(message), true);
 assert.deepEqual(renderedChoices.at(-1), secondChoices, 'Memo-N持久化完成后仍应保持当前Swipe选项');
 
-console.log('yiyi-choice compatibility PASS: parse=1, renders-during-persistence=1, active-swipe-refresh=1, rescans-after-cleanup=1');
+console.log('opt-n compatibility PASS: parse=1, renders-during-persistence=1, active-swipe-refresh=1, rescans-after-cleanup=1');
