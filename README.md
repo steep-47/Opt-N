@@ -1,6 +1,6 @@
-# YiYi-ChoiceClic
+# Opt-N
 
-SillyTavern 的伊依动态行动选项点击扩展。
+SillyTavern 的动态行动选项点击扩展。
 
 - 自动识别最新 AI 回复中连续编号的行动选项，支持 2 项及以上。
 - 支持 `1.`、`1、`、`1）`、`1:`、`①` 等常见编号格式。
@@ -16,6 +16,6 @@ SillyTavern 的伊依动态行动选项点击扩展。
 
 在 SillyTavern 的扩展管理中选择 **Install Extension / 安装扩展**，输入本仓库地址：
 
-`https://github.com/steep-47/YiYi-ChoiceClic`
+`https://github.com/steep-47/Opt-N`
 
 安装后刷新或重启 SillyTavern。
