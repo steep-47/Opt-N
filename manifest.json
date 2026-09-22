@@ -1,5 +1,5 @@
 {
-  "display_name": "伊依点击选项",
+  "display_name": "Opt-N",
   "loading_order": 110,
   "requires": [],
   "optional": [],
@@ -7,5 +7,5 @@
   "css": "style.css",
   "author": "steep-47",
   "version": "0.3.9",
-  "homePage": "https://github.com/steep-47/YiYi-ChoiceClic"
+  "homePage": "https://github.com/steep-47/Opt-N"
 }
