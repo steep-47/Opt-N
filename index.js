@@ -1,4 +1,4 @@
-const EXT='[YiYi ChoiceClick]';
+const EXT='[Opt-N]';
 const PANEL='yiyi-choice-panel';
 const INPUT_MARK='\n补充：';
 let timer=null;
