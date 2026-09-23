@@ -1,9 +1,15 @@
 /* TauriTavern derives @owner from the managed Git remote, not manifest.author.
-   Hide that derived owner only on Opt-N's own extension-manager row. */
+   Existing installs may still use the pre-rename folder "YiYi-ChoiceClic",
+   so match both folder identities plus the actual Opt-N repository link. */
 .extension_block[data-name="/Opt-N"] .extension_author,
 .extension_block[data-name^="/Opt-N@"] .extension_author,
 .extension_block[data-name="Opt-N"] .extension_author,
-.extension_block[data-name^="Opt-N@"] .extension_author {
+.extension_block[data-name^="Opt-N@"] .extension_author,
+.extension_block[data-name="/YiYi-ChoiceClic"] .extension_author,
+.extension_block[data-name^="/YiYi-ChoiceClic@"] .extension_author,
+.extension_block[data-name="YiYi-ChoiceClic"] .extension_author,
+.extension_block[data-name^="YiYi-ChoiceClic@"] .extension_author,
+.extension_block:has(a[href*="github.com/steep-47/Opt-N"]) .extension_author {
     display: none !important;
 }
 
