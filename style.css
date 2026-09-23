@@ -1,6 +1,6 @@
-/* Marked by Opt-N runtime from the current manifest display name.
-   This does not depend on the local install folder or any historical repo name. */
-.extension_block.optn-extension-row .extension_author {
+/* Current Opt-N install identity only. No legacy-name compatibility code. */
+.extension_block[data-name="/Opt-N"] .extension_author,
+.extension_block[data-name="Opt-N"] .extension_author {
     display: none !important;
 }
 
