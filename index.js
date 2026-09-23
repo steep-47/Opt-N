@@ -1,5 +1,5 @@
 const EXT='[Opt-N]';
-const PANEL='yiyi-choice-panel';
+const PANEL='optn-choice-panel';
 const INPUT_MARK='\n补充：';
 let timer=null;
 let lastScanKey='';
@@ -48,12 +48,12 @@ function render(m,cs){
  if(p?.dataset.sig===sig)return;
  p?.remove();
  p=document.createElement('div');p.className=PANEL;p.dataset.sig=sig;
- p.innerHTML='<div class="yiyi-choice-title">点击选项 · 可多选 · 按点击顺序执行</div><div class="yiyi-choice-list"></div><div class="yiyi-choice-actions"><button type="button" class="menu_button yiyi-fill" disabled>填入输入框</button><button type="button" class="menu_button yiyi-run" disabled>执行所选</button></div><div class="yiyi-choice-hint">可选一项或多项；点“填入输入框”后会自动另起“补充：”，直接继续输入即可。</div>';
- const order=[],list=p.querySelector('.yiyi-choice-list');
- function refresh(){p.querySelectorAll('.yiyi-choice-item').forEach(b=>{const pos=order.indexOf(+b.dataset.n);b.classList.toggle('selected',pos>=0);b.setAttribute('aria-pressed',pos>=0?'true':'false');let badge=b.querySelector('.yiyi-order');if(pos<0)badge?.remove();else{if(!badge){badge=document.createElement('span');badge.className='yiyi-order';b.append(badge)}badge.textContent=String(pos+1)}});p.querySelector('.yiyi-fill').disabled=!order.length;p.querySelector('.yiyi-run').disabled=!order.length}
- for(const c of cs){const b=document.createElement('button');b.type='button';b.className='yiyi-choice-item';b.dataset.n=c.n;b.setAttribute('aria-pressed','false');b.innerHTML=`<span class="yiyi-num">${c.n}</span><span class="yiyi-text"></span>`;b.querySelector('.yiyi-text').textContent=c.t;b.addEventListener('click',ev=>{ev.preventDefault();ev.stopPropagation();const i=order.indexOf(c.n);i>=0?order.splice(i,1):order.push(c.n);refresh()});list.append(b)}
- p.querySelector('.yiyi-fill').addEventListener('click',ev=>{ev.preventDefault();ev.stopPropagation();const old=input()?.value||'';setInput(fillValue(cs,order,old),{focus:true,caretEnd:true})});
- p.querySelector('.yiyi-run').addEventListener('click',ev=>{ev.preventDefault();ev.stopPropagation();const old=input()?.value||'';send(compose(cs,order,currentExtra(old)))});
+ p.innerHTML='<div class="optn-choice-title">点击选项 · 可多选 · 按点击顺序执行</div><div class="optn-choice-list"></div><div class="optn-choice-actions"><button type="button" class="menu_button optn-fill" disabled>填入输入框</button><button type="button" class="menu_button optn-run" disabled>执行所选</button></div><div class="optn-choice-hint">可选一项或多项；点“填入输入框”后会自动另起“补充：”，直接继续输入即可。</div>';
+ const order=[],list=p.querySelector('.optn-choice-list');
+ function refresh(){p.querySelectorAll('.optn-choice-item').forEach(b=>{const pos=order.indexOf(+b.dataset.n);b.classList.toggle('selected',pos>=0);b.setAttribute('aria-pressed',pos>=0?'true':'false');let badge=b.querySelector('.optn-order');if(pos<0)badge?.remove();else{if(!badge){badge=document.createElement('span');badge.className='optn-order';b.append(badge)}badge.textContent=String(pos+1)}});p.querySelector('.optn-fill').disabled=!order.length;p.querySelector('.optn-run').disabled=!order.length}
+ for(const c of cs){const b=document.createElement('button');b.type='button';b.className='optn-choice-item';b.dataset.n=c.n;b.setAttribute('aria-pressed','false');b.innerHTML=`<span class="optn-num">${c.n}</span><span class="optn-text"></span>`;b.querySelector('.optn-text').textContent=c.t;b.addEventListener('click',ev=>{ev.preventDefault();ev.stopPropagation();const i=order.indexOf(c.n);i>=0?order.splice(i,1):order.push(c.n);refresh()});list.append(b)}
+ p.querySelector('.optn-fill').addEventListener('click',ev=>{ev.preventDefault();ev.stopPropagation();const old=input()?.value||'';setInput(fillValue(cs,order,old),{focus:true,caretEnd:true})});
+ p.querySelector('.optn-run').addEventListener('click',ev=>{ev.preventDefault();ev.stopPropagation();const old=input()?.value||'';send(compose(cs,order,currentExtra(old)))});
  text.insertAdjacentElement('afterend',p);
 }
 
@@ -114,7 +114,7 @@ function init(){
    if(relevant)schedule(180);
  }).observe(chat,{subtree:true,childList:true,characterData:true,attributes:false});
  document.addEventListener('click',e=>{if(e.target.closest('.swipe_left,.swipe_right,.swipe_left_button,.swipe_right_button')){clearPanels();resetAndScan(300)}});
- schedule(0);console.log(EXT,'v0.3.11 loaded');
+ schedule(0);console.log(EXT,'v0.3.12 loaded');
 }
 
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
