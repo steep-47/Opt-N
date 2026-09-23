@@ -114,7 +114,7 @@ function init(){
    if(relevant)schedule(180);
  }).observe(chat,{subtree:true,childList:true,characterData:true,attributes:false});
  document.addEventListener('click',e=>{if(e.target.closest('.swipe_left,.swipe_right,.swipe_left_button,.swipe_right_button')){clearPanels();resetAndScan(300)}});
- schedule(0);console.log(EXT,'v0.3.9 loaded');
+ schedule(0);console.log(EXT,'v0.3.10 loaded');
 }
 
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
