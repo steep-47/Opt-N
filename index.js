@@ -94,7 +94,20 @@ function beginGeneration(type,_options,dryRun){
  generating=true;clearPanels();lastScanKey='';managedInput=null;
 }
 
+function normalizeExtensionManagerRow(){
+ document.querySelectorAll('.extension_block').forEach(block=>{
+   const name=block.querySelector('.extension_name')?.textContent?.trim();
+   if(name!=='Opt-N')return;
+   block.classList.add('optn-extension-row');
+ });
+}
+
 function init(){
+ normalizeExtensionManagerRow();
+ const managerObserver=new MutationObserver(records=>{
+   if(records.some(r=>[...r.addedNodes].some(n=>n.nodeType===1&&(n.matches?.('.extension_block,.extensions_info')||n.querySelector?.('.extension_block,.extensions_info')))))normalizeExtensionManagerRow();
+ });
+ if(document.body)managerObserver.observe(document.body,{childList:true,subtree:true});
  const c=ctx();const es=c?.eventSource,et=c?.eventTypes;
  if(es&&et){
    if(et.GENERATION_STARTED)es.on(et.GENERATION_STARTED,beginGeneration);
@@ -114,7 +127,7 @@ function init(){
    if(relevant)schedule(180);
  }).observe(chat,{subtree:true,childList:true,characterData:true,attributes:false});
  document.addEventListener('click',e=>{if(e.target.closest('.swipe_left,.swipe_right,.swipe_left_button,.swipe_right_button')){clearPanels();resetAndScan(300)}});
- schedule(0);console.log(EXT,'v0.3.12 loaded');
+ schedule(0);console.log(EXT,'v0.3.13 loaded');
 }
 
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
