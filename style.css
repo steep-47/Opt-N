@@ -1,16 +1,20 @@
-/* TauriTavern derives @owner from the managed Git remote, not manifest.author.
-   Existing installs may still use the pre-rename folder "YiYi-ChoiceClic",
-   so match both folder identities plus the actual Opt-N repository link. */
+/* Opt-N extension-manager row: TauriTavern derives @owner from the managed
+   Git remote. Hide that derived owner for this repository without depending
+   on any legacy local folder name. */
+.extension_block:has(a[href*="github.com/steep-47/Opt-N"]) .extension_author,
 .extension_block[data-name="/Opt-N"] .extension_author,
-.extension_block[data-name^="/Opt-N@"] .extension_author,
-.extension_block[data-name="Opt-N"] .extension_author,
-.extension_block[data-name^="Opt-N@"] .extension_author,
-.extension_block[data-name="/YiYi-ChoiceClic"] .extension_author,
-.extension_block[data-name^="/YiYi-ChoiceClic@"] .extension_author,
-.extension_block[data-name="YiYi-ChoiceClic"] .extension_author,
-.extension_block[data-name^="YiYi-ChoiceClic@"] .extension_author,
-.extension_block:has(a[href*="github.com/steep-47/Opt-N"]) .extension_author {
+.extension_block[data-name="Opt-N"] .extension_author {
     display: none !important;
 }
 
-.yiyi-choice-panel{margin:10px 0 4px;padding:10px;border:1px solid var(--SmartThemeBorderColor);border-radius:12px}.yiyi-choice-title,.yiyi-choice-hint{opacity:.7;font-size:.85em;margin:2px 2px 8px}.yiyi-choice-list{display:grid;gap:7px}.yiyi-choice-item{width:100%;min-height:44px;display:grid;grid-template-columns:30px 1fr auto;align-items:center;gap:8px;text-align:left;padding:9px 10px;border:1px solid var(--SmartThemeBorderColor);border-radius:10px;color:var(--SmartThemeBodyColor);background:var(--SmartThemeBlurTintColor);cursor:pointer;font:inherit}.yiyi-choice-item.selected{border-color:var(--SmartThemeQuoteColor);box-shadow:inset 0 0 0 1px var(--SmartThemeQuoteColor)}.yiyi-num{font-weight:700;text-align:center}.yiyi-order{min-width:24px;height:24px;padding:0 6px;display:inline-flex;align-items:center;justify-content:center;border-radius:99px;background:var(--SmartThemeQuoteColor);font-weight:700}.yiyi-choice-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}.yiyi-choice-actions .menu_button{min-height:40px;flex:1 1 140px}.yiyi-choice-actions button:disabled{opacity:.45}.yiyi-choice-hint{margin-top:7px;margin-bottom:0}
+.optn-choice-panel{margin:10px 0 4px;padding:10px;border:1px solid var(--SmartThemeBorderColor);border-radius:12px}
+.optn-choice-title,.optn-choice-hint{opacity:.7;font-size:.85em;margin:2px 2px 8px}
+.optn-choice-list{display:grid;gap:7px}
+.optn-choice-item{width:100%;min-height:44px;display:grid;grid-template-columns:30px 1fr auto;align-items:center;gap:8px;text-align:left;padding:9px 10px;border:1px solid var(--SmartThemeBorderColor);border-radius:10px;color:var(--SmartThemeBodyColor);background:var(--SmartThemeBlurTintColor);cursor:pointer;font:inherit}
+.optn-choice-item.selected{border-color:var(--SmartThemeQuoteColor);box-shadow:inset 0 0 0 1px var(--SmartThemeQuoteColor)}
+.optn-num{font-weight:700;text-align:center}
+.optn-order{min-width:24px;height:24px;padding:0 6px;display:inline-flex;align-items:center;justify-content:center;border-radius:99px;background:var(--SmartThemeQuoteColor);font-weight:700}
+.optn-choice-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}
+.optn-choice-actions .menu_button{min-height:40px;flex:1 1 140px}
+.optn-choice-actions button:disabled{opacity:.45}
+.optn-choice-hint{margin-top:7px;margin-bottom:0}
