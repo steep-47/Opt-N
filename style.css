@@ -1,9 +1,6 @@
-/* Opt-N extension-manager row: TauriTavern derives @owner from the managed
-   Git remote. Hide that derived owner for this repository without depending
-   on any legacy local folder name. */
-.extension_block:has(a[href*="github.com/steep-47/Opt-N"]) .extension_author,
-.extension_block[data-name="/Opt-N"] .extension_author,
-.extension_block[data-name="Opt-N"] .extension_author {
+/* Marked by Opt-N runtime from the current manifest display name.
+   This does not depend on the local install folder or any historical repo name. */
+.extension_block.optn-extension-row .extension_author {
     display: none !important;
 }
 
