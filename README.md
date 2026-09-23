@@ -19,3 +19,8 @@ SillyTavern 的动态行动选项点击扩展。
 `https://github.com/steep-47/Opt-N`
 
 安装后刷新或重启 SillyTavern。
+
+
+## 命名
+
+当前扩展名称统一为 **Opt-N**。代码、运行时选择器和界面标识均使用 Opt-N 命名，不再保留旧名称兼容标识。
